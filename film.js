@@ -104,3 +104,11 @@ const filmy = [
 		premiera: '2022-12-24',
 	},
 ]
+//Bonus 5
+//1. Získáme ID filmu z URL (bez #)
+const idFilmu = location.hash.slice(1);
+
+//2. najdeme odpovídající film v poli
+const vybranyFilm = filmy.find(film => film.id === idFilmu);
+
+//3. najdeme element na stránce, kam budeme informace vypisovat
