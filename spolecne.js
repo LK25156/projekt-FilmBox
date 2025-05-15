@@ -1,21 +1,18 @@
 //1.najdeme tlačítko a menu
-const menuTlacitko = document.querySelector("#menu-tlacitko");
-const menuPolozky = document.querySelector("#menu-polozky");
-const ikonka = menuTlacitko.querySelector("i"); //najdeme <i> uvnitř tlačítka
+const menuTlacitkoElement = document.querySelector("#menu-tlacitko");
+const menuPolozkyElement = document.querySelector("#menu-polozky");
 
 //2.přidáme posluchač události
-menuTlacitko.addEventListener("click",() => {
+menuTlacitkoElement.addEventListener("click",() => {
 //3.přepínáme třídu show
-menuPolozky.classList.toggle("show");
+menuPolozkyElement.classList.toggle("show");
 
 //bonus měníme ikonku
-if (menuPolozky.classList.contains(show)) {
+if (menuPolozkyElement.classList.contains("show")) {
   //menu je otevřené - ikonka se změní na křížek
-  ikonka.classList.remove("fa-bars");
-  ikonka.classList.add("fa-xmark");
+ 
+  menuTlacitkoElement.innerHTML='<i class="fas fa-xmark"></i>'
 } else {
-  //menu je zavřené - ikonka se změní zpět na hamburger
-  ikonka.classList.remove("fa-xmark");
-  ikonka.classList.add("fa-bars");
+ menuTlacitkoElement.innerHTML = '<i class="fas fa-bars"></i>'
 }
-});
+})

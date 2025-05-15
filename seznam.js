@@ -117,15 +117,15 @@ const filmy = [
     premiera: '2007-03-15',
   }
 ];
-//Najdeme prvek se seznamem
-const seznam = document.querySelector("#seznam-filmu");
+//Najdeme prvek s id seznam-filmu
+const seznamFilmuElement = document.querySelector("#seznam-filmu")
 
 //vymažeme jeho obsah
-seznam.innerHTML = "";
+seznamFilmuElement.innerHTML = "";
 
 //projdeme filmy a vložíme do HTML
-filmy.forEach(film=> {
-	seznam.innerHTML += `
+filmy.forEach((film)=> {
+	seznamFilmuElement.innerHTML += `
 	 <div class="col">
 	 <div class="card">
 	 <img 
@@ -138,12 +138,10 @@ filmy.forEach(film=> {
 	 <div class="card-body">
 	 <h5 class="card-title">${film.nazev}</h5>
 	 <p class="card-text">${film.ochutnavka}</p>
-	 <a href="film.html" class="btn btn-primary">Přehrát</a>
+	 <a href="film.html#${film.id}" class="btn btn-primary">Přehrát</a>
 	 </div>
 	 </div>
 	 </div>
 	 `;
-});
+})
 
-//Bonus 5
-<a href="film.html#${film.id}" class="btn btn-primary">Přehrát</a>
